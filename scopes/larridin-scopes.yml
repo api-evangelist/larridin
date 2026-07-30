@@ -1,0 +1,53 @@
+generated: '2026-07-19'
+method: searched
+source: well-known/larridin-oauth-authorization-server.json
+docs: https://docs.larridin.com/api/mcp
+notes: >-
+  The Scout REST API v1 does not use OAuth — it authenticates with a company API key and gates access
+  with a single named API-key scope, ANALYTICS. OAuth 2.0 applies to the beta MCP server, whose
+  authorization server publishes the four standard OIDC/OAuth scopes below. No Larridin-specific OAuth
+  scope names are published; nothing beyond what the metadata document advertises is asserted here.
+schemes:
+- name: larridinOAuth
+  source: well-known/larridin-oauth-authorization-server.json
+  issuer: https://login.larridin.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://login.larridin.com/oauth2/authorize
+    tokenUrl: https://login.larridin.com/oauth2/token
+  - flow: deviceCode
+    deviceAuthorizationUrl: https://login.larridin.com/oauth2/device_authorization
+    tokenUrl: https://login.larridin.com/oauth2/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; issues an ID token identifying the signed-in Larridin user.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/larridin-oauth-authorization-server.json
+- scope: profile
+  description: Access to the signed-in user's basic profile claims.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/larridin-oauth-authorization-server.json
+- scope: email
+  description: Access to the signed-in user's email address claim.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/larridin-oauth-authorization-server.json
+- scope: offline_access
+  description: Issues a refresh token so the client can maintain access without re-prompting the user.
+  flows:
+  - authorizationCode
+  sources:
+  - well-known/larridin-oauth-authorization-server.json
+api_key_scopes:
+- scope: ANALYTICS
+  description: >-
+    Required on a company API key for every Scout API v1 endpoint. This is an API-key scope, not an
+    OAuth scope.
+  applies_to: https://scout-api.larridin.com/api/v1
+  sources:
+  - https://docs.larridin.com/api/scout-api-v1-reference

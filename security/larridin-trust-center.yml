@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+probe: true
+source: https://trust.larridin.com/
+url: https://trust.larridin.com/
+certifications:
+- SOC 2
+- HIPAA
+- GDPR
+evidence:
+- source: https://trust.larridin.com/
+  keywords:
+  - soc 2
+  - soc2
+  - hipaa
+  - trust center
+  - gdpr

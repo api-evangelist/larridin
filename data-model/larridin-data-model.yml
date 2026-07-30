@@ -1,0 +1,149 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/larridin-scout-openapi.yml
+docs: https://docs.larridin.com/api/scout-api-v1-reference
+notes: >-
+  The Scout API v1 is an analytics/reporting API: it exposes aggregated metric payloads rather than
+  addressable CRUD resources, and the reference publishes no shared component schemas. The entity graph
+  below is derived from the identifier fields that appear across the documented response examples and
+  from the path parameters, not from a provider-published object reference.
+entities:
+- name: Organization
+  description: >-
+    The tenant. Every request is scoped to the organization that owns the company API key; the
+    organization is implicit rather than addressable.
+  id_field: null
+  addressable: false
+- name: Department
+  description: An organizational unit that metrics can be grouped and filtered by.
+  id_field: departmentId
+  id_example: dept-123
+  label_field: departmentName
+  addressable: false
+  filter_param: 'department[]'
+- name: User
+  description: >-
+    An employee whose AI usage is measured. Surfaced in aggregate counts and in the user-tool-usage
+    breakdown; there is no user resource endpoint.
+  addressable: false
+- name: Tool
+  description: >-
+    An AI tool observed in the organization, sanctioned or shadow. Carries category, status, platform,
+    and license type.
+  id_field: toolId
+  id_example: tool-123
+  label_field: name
+  addressable: true
+  path: /tools/{toolId}
+  enums:
+    platform:
+    - BROWSER
+    - DESKTOP
+    category_example: AI_ASSISTANT
+    status_example: APPROVED
+- name: Survey
+  description: A survey campaign issued to employees.
+  id_field: survey_id
+  addressable: true
+  path: /surveys/{survey_id}
+- name: SurveyQuestion
+  description: A question within a survey campaign.
+  id_field: question_id
+  addressable: true
+  path: /surveys/{survey_id}/questions
+- name: SurveyQuestionOption
+  description: A selectable option on a survey question.
+  addressable: true
+  path: /surveys/{survey_id}/questions/{question_id}/options
+- name: SurveyResponse
+  description: An employee's answer to a survey question.
+  addressable: true
+  path: /surveys/{survey_id}/questions/{question_id}/responses
+- name: Workflow
+  description: >-
+    A clustered workflow — a recurring sequence of steps across tools, inferred from observed activity.
+  id_field: workflowId
+  addressable: true
+  path: /workflow/workflows/{workflowId}
+- name: RawWorkflow
+  description: A per-user, per-day unclustered workflow observation that clustered workflows roll up from.
+  addressable: true
+  path: /workflow/raw-workflows
+- name: ReportingGroup
+  description: A grouping used to scope workflow friction reporting.
+  addressable: true
+  path: /workflow/reporting-groups
+- name: Recommendation
+  description: A workflow improvement recommendation produced by Workflow Intelligence.
+  addressable: true
+  path: /workflow/recommendations
+- name: ToolVerdict
+  description: The AI-impact verdict and recommendation attached to a tool.
+  addressable: true
+  path: /workflow/tools/{toolId}/verdict
+relationships:
+- from: Organization
+  to: Department
+  type: has_many
+  via: departmentId
+- from: Department
+  to: User
+  type: has_many
+- from: Organization
+  to: Tool
+  type: has_many
+  via: toolId
+- from: User
+  to: Tool
+  type: has_many
+  via: user-tool-usage
+  evidence: GET /tools/user-tool-usage
+- from: Department
+  to: Tool
+  type: has_many
+  via: tools
+  evidence: adoption breakdown groupBy=departments embeds a tools[] array
+- from: Survey
+  to: SurveyQuestion
+  type: has_many
+  via: survey_id
+- from: SurveyQuestion
+  to: SurveyQuestionOption
+  type: has_many
+  via: question_id
+- from: SurveyQuestion
+  to: SurveyResponse
+  type: has_many
+  via: question_id
+- from: SurveyResponse
+  to: User
+  type: belongs_to
+- from: Workflow
+  to: Tool
+  type: has_many
+  via: toolId
+  evidence: GET /workflow/tools/{toolId}/workflows
+- from: Workflow
+  to: RawWorkflow
+  type: has_many
+  via: clustering
+- from: Workflow
+  to: Recommendation
+  type: has_many
+- from: Tool
+  to: ToolVerdict
+  type: has_one
+  via: toolId
+- from: ReportingGroup
+  to: Workflow
+  type: has_many
+id_conventions:
+  observed:
+  - field: departmentId
+    example_prefix: 'dept-'
+  - field: toolId
+    example_prefix: 'tool-'
+  note: >-
+    Prefixes are taken from the reference's response examples. Larridin publishes no id-prefix
+    convention, so these are illustrative rather than guaranteed.
+render: null

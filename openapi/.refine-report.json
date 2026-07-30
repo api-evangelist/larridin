@@ -1,0 +1,22 @@
+{
+  "provider": "larridin",
+  "sources": [
+    "larridin-adoption-api-openapi.yml",
+    "larridin-proficiency-api-openapi.yml",
+    "larridin-surveys-api-openapi.yml",
+    "larridin-tools-api-openapi.yml",
+    "larridin-workflow-intelligence-api-openapi.yml"
+  ],
+  "outputs": [
+    "larridin-adoption-api-openapi.yml",
+    "larridin-proficiency-api-openapi.yml",
+    "larridin-surveys-api-openapi.yml",
+    "larridin-tools-api-openapi.yml",
+    "larridin-workflow-intelligence-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

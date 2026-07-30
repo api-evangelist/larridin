@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.larridin.com/api/scout-api-v1-reference
+notes: >-
+  Larridin publishes no versioning policy, deprecation policy, SLA, changelog, or status page as of this
+  pass. What is recorded below is what the developer surface actually shows: a v1 path segment on the
+  Scout API and a documented beta stage for the MCP server and Ask AI. Absence is recorded honestly
+  rather than inferred.
+versioning:
+  scheme: uri-path
+  current: v1
+  evidence: base URL https://scout-api.larridin.com/api/v1
+  policy_documented: false
+  docs: https://docs.larridin.com/api/scout-api-v1-reference
+deprecation:
+  policy_documented: false
+  policy_url: null
+  sunset_header: unknown
+  deprecation_header: unknown
+sla:
+  documented: false
+  url: null
+status_page:
+  present: false
+  probed:
+  - url: https://status.larridin.com/
+    result: no DNS resolution
+  note: >-
+    The Larridin Trust Center lists Status Monitoring as an infrastructure control, but no public status
+    page is published.
+release_stages:
+- component: Scout API v1
+  stage: generally available
+  evidence: documented as the v1 reference with no beta qualifier
+- component: MCP server
+  stage: beta
+  evidence: 'documented title "MCP Server (Beta)"; enabled per organization'
+  docs: https://docs.larridin.com/api/mcp
+- component: Ask AI
+  stage: beta
+  evidence: 'documented as "Ask AI (Beta)" in llms/larridin-llms.txt'
+  docs: https://docs.larridin.com/ask-ai
+deprecated_operations: []
+changelog:
+  present: false
+  probed:
+  - https://docs.larridin.com/changelog
+  - https://docs.larridin.com/releases
+  - https://larridin.com/changelog
+  note: >-
+    No dated changelog found. https://larridin.com/newsroom exists but is company news, not a product
+    or API changelog.

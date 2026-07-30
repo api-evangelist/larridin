@@ -1,0 +1,128 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.larridin.com/api/scout-api-v1-reference
+notes: >-
+  Cross-cutting request/response semantics for the Larridin Scout API v1, taken from the "Common
+  Patterns" section of the public reference plus the parameter tables on each endpoint.
+authentication:
+  style: api-key-header
+  header: x-company-api-key
+  required_scope: ANALYTICS
+  profile: authentication/larridin-authentication.yml
+response_envelope:
+  style: wrapper
+  shape: '{ "success": true, "data": { ... }, "query": { ... } }'
+  fields:
+  - name: success
+    description: Boolean status flag present on every response.
+  - name: data
+    description: Endpoint-specific payload.
+  - name: query
+    description: Echo of the resolved query parameters.
+error_envelope:
+  shape: '{ "success": false, "error": "Error message" }'
+  validation_shape: '{ "error": "Validation failed", "details": [{ "field": "startDate", "message": "..." }] }'
+  format: custom
+  rfc9457: false
+  catalog: errors/larridin-problem-types.yml
+pagination:
+  style: page-number
+  supported_on: breakdown and list endpoints
+  request_params:
+  - name: page
+    default: 1
+    minimum: 1
+  - name: limit
+    default: 10
+    maximum: 100
+  response_fields:
+  - data
+  - total
+  - page
+  - limit
+  response_shape: '{ "data": [ ... ], "total": 50, "page": 1, "limit": 10 }'
+sorting:
+  request_params:
+  - name: sortBy
+    description: Endpoint-specific sort field; each endpoint's reference lists its allowed values.
+  - name: sortOrder
+    default: desc
+    values:
+    - asc
+    - desc
+array_parameters:
+  style: bracket-notation
+  example: '?department[]=dept1&department[]=dept2'
+  common_params:
+  - 'department[]'
+  - 'tool[]'
+  - 'platform[]'
+  - 'aiTypes[]'
+  - 'percentiles[]'
+  - 'topics[]'
+date_handling:
+  format: YYYY-MM-DD
+  params:
+  - startDate
+  - endDate
+  rules:
+  - startDate must be less than or equal to endDate
+  - startDate cannot be more than 1 day in the future
+  period_selection:
+    note: >-
+      Proficiency endpoints use period-based selection instead of date ranges, via periodType
+      (monthly or quarterly), period (1-12 monthly, 1-4 quarterly), and year.
+granularity:
+  param: granularity
+  default: daily
+  values:
+  - value: daily
+    description: Per-day aggregation
+  - value: weekly
+    description: Per-week (Monday start)
+  - value: biweekly
+    description: Two-week periods
+  - value: four-weekly
+    description: Four consecutive completed weeks (rolling)
+  - value: monthly
+    description: Calendar month
+  - value: twelve-weekly
+    description: Twelve consecutive completed weeks (rolling)
+  note: Proficiency endpoints accept only weekly or biweekly.
+grouping:
+  param: groupBy
+  values:
+  - none
+  - departments
+  - tools
+  description: Controls whether metrics are returned org-wide or broken out by department or tool.
+null_semantics:
+  documented: true
+  rules:
+  - A field set to null means the metric is available but has no data for the period.
+  - A missing or absent field means the metric is not applicable for the given parameters (for example,
+    WAU metrics do not appear at daily granularity).
+  - '*Change and *ChangePct fields are null when there is no prior period to compare against.'
+idempotency:
+  supported: false
+  reason: >-
+    Every documented Scout API v1 operation is a read-only GET; the provider documents no
+    idempotency-key header or request-replay contract.
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: lifecycle/larridin-lifecycle.yml
+rate_limiting:
+  documented: false
+  note: The public reference documents no rate-limit headers, quotas, or 429 response.
+request_tracing:
+  documented: false
+  note: The public reference documents no request-id or correlation header.
+field_expansion:
+  documented: false
+metadata:
+  documented: false
+networking:
+  egress_ip_allowlisting:
+    documented: true
+    docs: https://docs.larridin.com/security/egress-ips

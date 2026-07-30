@@ -1,0 +1,63 @@
+# Larridin Docs
+
+> Support documentation for the Larridin platform.
+
+## Docs
+
+- [AI Adoption](/ai-adoption.md): See who is using AI across your organization, how broadly, and how that's trending over time. Usage is broken down by department and team so you can spot where adoption is strong and where it's lagging.
+- [AI Fluency](/ai-fluency.md): Measure how *skillfully* people use AI — not just whether they use it. AI Fluency surfaces where teams are proficient and where they'd benefit from more support or enablement.
+- [AI Governance](/ai-governance.md): Monitor AI usage against your policies — including the use of unsanctioned tools — so you can manage risk and stay compliant across the organization.
+- [AI Tools](/ai-tools.md): A live inventory of the AI tools in use across your organization — both sanctioned and shadow tools — so you can see what's being adopted, by whom, and where to focus.
+- [MCP Server (Beta)](/api/mcp.md): Connect AI assistants and agents to Scout through the Model Context Protocol (MCP).
+- [Scout API v1 Reference](/api/scout-api-v1-reference.md): **Base URL:** `https://scout-api.larridin.com/api/v1`
+- [Ask AI (Beta)](/ask-ai.md): Ask questions about your Scout data in plain language and get instant answers — no dashboards or queries required.
+- [Developer Intelligence](/developer-intelligence.md): How engineering adopts AI and how it shows up in shipped work — adoption, code share, velocity, quality, delivery, reliability, agent effectiveness, and sentiment.
+- [Agent Effectiveness](/developer-intelligence/agent-effectiveness.md): Score how effectively engineers use AI coding agents — from session-level signals through to shipped outcomes — using your coding-tool connections and Git provider.
+- [Agent Readiness](/developer-intelligence/agent-readiness.md): Agent Readiness grades how ready a repository is for AI coding agents. Every repository is scored against **84 binary checks** across **nine categories**, and the results roll up into **five readiness levels**. This page documents each level, how scoring works, and every check we assess: what we look for, why it matters for agents, and how to satisfy it.
+- [AI Adoption](/developer-intelligence/ai-adoption.md): Track how engineering teams are adopting AI coding tools — who's using them, how consistently, and across which teams. (This is the engineering-specific view; for org-wide adoption see [AI Adoption](/ai-adoption).)
+- [AI Code Share](/developer-intelligence/ai-code-share.md): See how much of your shipped code is written with AI assistance versus by hand, attributed down to repo and team.
+- [CI/CD](/developer-intelligence/cicd.md): CI/CD and DORA views require Admin access. Admins can configure delivery and service mappings and monitor delivery pipeline health across repositories and environments — deployments, lead time, failures, and recovery.
+- [Developer Sentiment](/developer-intelligence/developer-sentiment.md): Capture how engineers feel about their tools, workflows, and AI through periodic surveys, pairing qualitative sentiment with the behavioral metrics across Developer Intelligence.
+- [Quality](/developer-intelligence/quality.md): Track the quality of what engineering ships, not just the volume — across teams, and split by AI- and human-authored work. Quality spans a range of signals; the two highlights below are the ones to watch, with a sample of the rest underneath.
+- [Reliability](/developer-intelligence/reliability.md): Understand incident load and response for engineering — incident volume, time to acknowledge (MTTA), and time to resolve (MTTR) — powered by [Datadog](/integrations/datadog), [PagerDuty](/integrations/pagerduty), and [incident.io](/integrations/incident-io).
+- [Velocity](/developer-intelligence/velocity.md): Measure how much engineering is shipping and how quickly — across teams, and split by AI- and human-authored work. Velocity brings together a range of throughput and cycle-time metrics; a few examples are below.
+- [WorkGraph](/developer-intelligence/workgraph.md): Visualize how engineering work flows across people, repos, and teams — a map of collaboration and dependencies in your org.
+- [Get Started](/get-started.md): Set up Scout and learn what each feature does and what data powers it.
+- [What powers each feature](/get-started/data-sources.md): Each Scout feature lights up only when its data source is connected. Use this matrix to plan your rollout.
+- [Quickstart](/get-started/quickstart.md): A role-based path to your first insights in Scout.
+- [What is Scout](/get-started/what-is-scout.md): Scout measures how your organization adopts and gets value from AI — across adoption, fluency, spend, workflows, and engineering impact.
+- [Help](/help.md): Help docs are on the way.
+- [Larridin Docs](/index.md): Support documentation for Scout — measure AI adoption, fluency, spend, and impact across your org.
+- [Integrations](/integrations.md): Connect the data sources that power Scout features. Setup for each source lives here once; feature pages link in.
+- [Claude Code](/integrations/claude-code.md): Connect Claude Code API access to monitor AI-assisted coding workflows across your team using Anthropic API keys.
+- [OpenAI Codex](/integrations/codex.md): Connect OpenAI Codex API access to capture coding-assistant usage and cost signals.
+- [Cursor](/integrations/cursor.md): Connect Cursor API access to track AI coding usage across your organization — spend, daily usage, model breakdown, and agent edits.
+- [Datadog](/integrations/datadog.md): Connect Datadog Incident Management to bring incident signals and service data into Developer Intelligence.
+- [GitHub](/integrations/github.md): Connect GitHub to power Developer Intelligence from your repositories and pull requests.
+- [GitLab](/integrations/gitlab.md): Connect GitLab (SaaS or self-managed) to power Developer Intelligence from your repositories and merge requests.
+- [incident.io](/integrations/incident-io.md): Connect incident.io to bring incident signals and service mappings into Developer Intelligence.
+- [Linear](/integrations/linear.md): Connect Linear to bring delivery and work-tracking context into Developer Intelligence.
+- [PagerDuty](/integrations/pagerduty.md): Connect PagerDuty to bring on-call and incident signals into Developer Intelligence.
+- [Slack](/integrations/slack.md): Connect Slack for collaboration signals and notifications.
+- [Security & Networking](/security.md): How Scout handles data, networking, and access.
+- [Egress IP allowlisting](/security/egress-ips.md): When Larridin connects to a system you host — a self-managed GitLab or GitHub instance, an API, or anything behind your own load balancer or firewall — all of our outbound traffic comes from a small, fixed set of **static IP addresses**. If your network enforces an inbound allowlist (firewall, WAF, load balancer, or GitLab/GitHub IP restrictions), add these addresses so our service can reach you.
+- [Setup](/setup.md): Connect the common data sources every Scout feature relies on.
+- [Browser Extension](/setup/browser-extension.md): Deploy the Scout browser extension to capture AI and business-app usage.
+- [Deploy Larridin Scout Extension on Chrome & Edge via Addigy](/setup/browser-extension/addigy/chrome-edge.md): This guide covers force-installing the Larridin Scout extension on Chrome and Edge on macOS via Addigy. By default, user identity is resolved by the extension from the signed-in browser profile, which works cleanly where users are signed into Chrome/Edge with their corporate profiles. If some users are on a personal or unmanaged profile — which surfaces as personal emails and duplicate or unmatched users — you can force the corporate identity with the [`userEmail` managed-config key](#forcing-the-corporate-email-optional).
+- [Deploy Larridin Scout Extension on Firefox via Addigy](/setup/browser-extension/addigy/firefox.md): This guide covers deploying the Larridin Scout Firefox extension on macOS via Addigy. Larridin handles building, signing, and hosting the extension; your MDM handles pushing it to devices and configuring it.
+- [Deploy Larridin Scout Extension on Safari via Addigy](/setup/browser-extension/addigy/safari.md): This guide covers deploying the Larridin Scout Safari extension to your organization's managed Macs via Addigy. Larridin publishes the extension as a macOS app on the Mac App Store (unlisted); your MDM pushes the app and the managed configuration to devices.
+- [Deploy Larridin Scout Extension on Chrome & Edge via Intune](/setup/browser-extension/intune/chrome-edge.md): This guide covers force-installing the Larridin Scout extension on Chrome and Edge via Microsoft Intune and pushing the four static config values: `apiKey`, `companyApiKey`, `companyId`, and `analyticsEndpoint`. Covers both Windows and macOS.
+- [Deploy Larridin Scout Extension on Firefox via Intune](/setup/browser-extension/intune/firefox.md): This guide covers deploying the Larridin Scout Firefox extension to your organization's managed devices via Microsoft Intune. Larridin handles building, signing, and hosting the extension; your MDM handles pushing it to devices and configuring it.
+- [Deploy Larridin Scout Extension on Safari via Intune](/setup/browser-extension/intune/safari.md): This guide covers deploying the Larridin Scout Safari extension to your organization's managed Macs via Microsoft Intune. Larridin publishes the extension as a macOS app on the Mac App Store (unlisted); your MDM pushes the app and the managed configuration to devices.
+- [Deploy Larridin Scout Extension on Chrome & Edge via Jamf](/setup/browser-extension/jamf/chrome-edge.md): This guide covers force-installing the Larridin Scout extension on Chrome and Edge on macOS via Jamf Pro. By default, user identity is resolved from the signed-in browser profile, which works cleanly where users are on their corporate profiles. If some users are on a personal or unmanaged profile, you can inject the assigned user's corporate email via Jamf's `$EMAIL` substitution (see *Injecting the assigned user's email* below).
+- [Deploy Larridin Scout Extension on Firefox via Jamf](/setup/browser-extension/jamf/firefox.md): This guide covers deploying the Larridin Scout Firefox extension on macOS via Jamf Pro. Larridin handles building, signing, and hosting the extension; your MDM handles pushing it to devices and configuring it.
+- [Deploy Larridin Scout Extension on Safari via Jamf](/setup/browser-extension/jamf/safari.md): This guide covers deploying the Larridin Scout Safari extension to your organization's managed Macs via Jamf Pro. Larridin publishes the extension as a macOS app on the Mac App Store (unlisted); your MDM pushes the app and the managed configuration to devices.
+- [Desktop Agent](/setup/desktop-agent.md): Deploy the Scout desktop agent to capture native app usage.
+- [Deploy Larridin Desktop Agent on macOS via Addigy](/setup/desktop-agent/addigy/macos.md): This guide covers deploying the Larridin Desktop Agent on macOS via Addigy. The MDM profiles and scripts here are written for Addigy specifically and may not work as-is with other macOS MDM platforms. Larridin can assist with adapting them for Jamf, Kandji, or Intune if needed.
+- [Deploy Larridin Desktop Agent on Windows via Intune](/setup/desktop-agent/intune/windows.md): This guide covers deploying the Larridin Desktop Agent on Windows via Microsoft Intune. It is intended for IT and endpoint management teams responsible for installation, configuration, and validation of the agent on managed devices. Deployment approaches may vary based on Windows version and organizational policies, and Larridin can assist with clarification or troubleshooting as needed during rollout.
+- [Org Chart & Directory Sync](/setup/org-chart.md): Sync your people, reporting lines, and team structure so every Scout metric can be sliced by department and team — and so usage data links back to the right person.
+- [Reporting & Privacy](/setup/privacy.md): Control how team analytics are displayed so individuals can't be singled out.
+- [SSO (Single Sign-On)](/setup/sso.md): Let your team sign in to Scout with your existing identity provider — no separate Scout passwords to manage.
+- [User Management](/setup/user-management.md): Invite people to Scout, assign roles, and manage who can see what.
+- [Token Spend & Insights](/token-spend.md): Track AI cost and usage by model, team, and supported tool.
+- [Workflow Intelligence](/workflow-intelligence.md): Discover how work actually gets done across teams. Scout surfaces real workflows from day-to-day activity and highlights where AI and automation can save the most time.

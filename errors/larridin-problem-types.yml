@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.larridin.com/api/scout-api-v1-reference
+derived_from: openapi/larridin-scout-openapi.yml
+format: custom
+rfc9457: false
+notes: >-
+  The Scout API v1 does not use RFC 9457 problem+json. It returns a JSON envelope with a success flag and
+  a human-readable error string; 400 validation failures add a details[] array of field/message pairs.
+  The provider publishes a flat table of four status codes rather than a typed error registry, so no
+  per-error type URIs or machine-readable codes exist to capture.
+envelope:
+  error: '{ "success": false, "error": "Error message" }'
+  validation_error: '{ "error": "Validation failed", "details": [{ "field": "startDate", "message": "..." }] }'
+  fields:
+  - name: success
+    description: Always false on an error response.
+  - name: error
+    description: Human-readable error message.
+  - name: details
+    description: Present on 400 validation failures; array of objects with field and message.
+problems:
+- status: 400
+  title: Bad Request
+  description: Validation failure or invalid parameters.
+  remediation: >-
+    Inspect details[] for the offending field. Common causes are a startDate later than endDate, a
+    startDate more than one day in the future, a date not in YYYY-MM-DD form, a granularity value the
+    endpoint does not accept, or a missing required parameter.
+  applies_to: all operations
+- status: 401
+  title: Unauthorized
+  description: Missing or invalid authentication.
+  remediation: >-
+    Send a valid company API key in the x-company-api-key header and confirm the key carries the
+    ANALYTICS scope.
+  applies_to: all operations
+- status: 404
+  title: Not Found
+  description: Resource does not exist.
+  remediation: >-
+    Verify the path identifier — toolId, survey_id, question_id, or workflowId — belongs to your
+    organization.
+  applies_to: operations with a path parameter
+- status: 500
+  title: Internal Server Error
+  description: Internal Server Error.
+  remediation: Retry the request; if it persists, contact Larridin support.
+  applies_to: all operations

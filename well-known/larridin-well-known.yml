@@ -1,0 +1,80 @@
+generated: '2026-07-19'
+method: searched
+source: live probe of /.well-known/ on every Larridin host in apis.yml + OpenAPI servers[]
+notes: >-
+  Only https://app.larridin.com/ serves real .well-known documents, and only the two OAuth metadata
+  documents that back the beta MCP server. The remaining paths on that host return HTTP 200 with the
+  application's SPA HTML shell rather than a discovery document, so they are recorded as not present.
+hosts:
+- host: https://app.larridin.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    standard: RFC 8414
+    status: 200
+    content_type: application/json
+    file: larridin-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource
+    standard: RFC 9728
+    status: 200
+    content_type: application/json
+    file: larridin-oauth-protected-resource.json
+  - path: /.well-known/security.txt
+    standard: RFC 9116
+    status: 200
+    present: false
+    note: returns the SPA HTML shell, not an RFC 9116 document
+  - path: /.well-known/openid-configuration
+    status: 200
+    present: false
+    note: returns the SPA HTML shell, not OIDC discovery metadata
+  - path: /.well-known/api-catalog
+    standard: RFC 9727
+    status: 200
+    present: false
+    note: returns the SPA HTML shell, not an api-catalog document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    present: false
+    note: returns the SPA HTML shell
+- host: https://larridin.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://scout-api.larridin.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://docs.larridin.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

@@ -1,0 +1,88 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Larridin Scout API
+  version: 1.0.0
+extends: openapi/larridin-scout-openapi.yml
+x-generated: '2026-07-19'
+x-method: generated
+x-source: https://docs.larridin.com/api/scout-api-v1-reference
+x-notes: >-
+  Captures the API Evangelist enrichment layer over the generated Scout API description. The underlying
+  OpenAPI is itself a faithful transcription of Larridin's public reference; these actions record the
+  cross-cutting semantics, provenance, and agent-facing metadata the pipeline derived, without mutating
+  that transcription.
+actions:
+- target: $.info
+  description: Record enrichment provenance and the artifacts that describe this API.
+  update:
+    x-apievangelist-enriched: '2026-07-19'
+    x-apievangelist-source: https://docs.larridin.com/api/scout-api-v1-reference
+    x-apievangelist-artifacts:
+      conventions: conventions/larridin-conventions.yml
+      errors: errors/larridin-problem-types.yml
+      authentication: authentication/larridin-authentication.yml
+      scopes: scopes/larridin-scopes.yml
+      lifecycle: lifecycle/larridin-lifecycle.yml
+      conformance: conformance/larridin-conformance.yml
+      data_model: data-model/larridin-data-model.yml
+      mcp: mcp/larridin-mcp.yml
+      skills: skills/_index.yml
+- target: $.info
+  description: Record the observed maturity and read-only posture of the documented surface.
+  update:
+    x-api-lifecycle: generally-available
+    x-read-only: true
+    x-machine-readable-spec-published-by-provider: false
+- target: $.info
+  description: Record the response and error envelope conventions.
+  update:
+    x-response-envelope: '{ "success": true, "data": {...}, "query": {...} }'
+    x-error-envelope: '{ "success": false, "error": "..." }'
+    x-problem-details-rfc9457: false
+- target: $.info
+  description: Record the pagination contract shared by breakdown and list endpoints.
+  update:
+    x-pagination:
+      style: page-number
+      params:
+      - page
+      - limit
+      default_limit: 10
+      max_limit: 100
+      response_fields:
+      - data
+      - total
+      - page
+      - limit
+- target: $.info
+  description: Record that array parameters use bracket notation, which OpenAPI style alone does not convey.
+  update:
+    x-array-parameter-style: 'bracket-notation, e.g. ?department[]=dept1&department[]=dept2'
+- target: $.info
+  description: Record the null-versus-missing field semantics the provider documents.
+  update:
+    x-null-semantics:
+      null_value: metric is available but has no data for the period
+      absent_field: metric is not applicable for the given parameters
+      change_fields: '*Change and *ChangePct are null when there is no prior period'
+- target: $.components.securitySchemes.companyApiKey
+  description: Make the required API-key scope explicit for agents and governance tooling.
+  update:
+    x-required-scope: ANALYTICS
+    x-scope-profile: scopes/larridin-scopes.yml
+- target: $.servers[0]
+  description: Record that the beta MCP server is a second, separately authenticated surface.
+  update:
+    x-companion-mcp-server:
+      url: https://app.larridin.com/mcp/larridin
+      transport: streamable-http
+      auth: oauth2
+      status: beta
+      manifest: mcp/larridin-mcp.yml
+- target: $.paths..get
+  description: Mark every documented operation as a safe read, since the whole surface is GET-only.
+  update:
+    x-agentic-access:
+      action-class: connected
+      consequence: read
+      audit: optional

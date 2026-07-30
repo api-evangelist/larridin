@@ -1,0 +1,424 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/larridin-scout-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 41
+  by_action_class:
+    connected: 41
+  by_consequence:
+    read: 41
+  human_in_the_loop_required: 0
+operations:
+- path: /adoption/overview
+  method: get
+  operationId: getAdoptionOverview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /adoption/trends
+  method: get
+  operationId: getAdoptionTrends
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /adoption/breakdown
+  method: get
+  operationId: getAdoptionBreakdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /proficiency/score
+  method: get
+  operationId: getProficiencyScore
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /proficiency/trends
+  method: get
+  operationId: getProficiencyTrends
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /proficiency/prompt-categories
+  method: get
+  operationId: getProficiencyPromptCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /proficiency/conversation-metrics
+  method: get
+  operationId: getProficiencyConversationMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/browser/overview
+  method: get
+  operationId: getToolsBrowserOverview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/browser/trends
+  method: get
+  operationId: getToolsBrowserTrends
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/browser/breakdown
+  method: get
+  operationId: getToolsBrowserBreakdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/desktop/overview
+  method: get
+  operationId: getToolsDesktopOverview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/desktop/trends
+  method: get
+  operationId: getToolsDesktopTrends
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/desktop/breakdown
+  method: get
+  operationId: getToolsDesktopBreakdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/{toolId}
+  method: get
+  operationId: getToolsByToolid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/user-tool-usage
+  method: get
+  operationId: getToolsUserToolUsage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/policy/enforcement-overview
+  method: get
+  operationId: getToolsPolicyEnforcementOverview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/policy/enforcement-breakdown
+  method: get
+  operationId: getToolsPolicyEnforcementBreakdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/policy/breakdown
+  method: get
+  operationId: getToolsPolicyBreakdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/unapproved/overview
+  method: get
+  operationId: getToolsUnapprovedOverview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tools/unapproved/breakdown
+  method: get
+  operationId: getToolsUnapprovedBreakdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /surveys
+  method: get
+  operationId: getSurveys
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /surveys/{survey_id}
+  method: get
+  operationId: getSurveysBySurveyId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /surveys/{survey_id}/questions
+  method: get
+  operationId: getSurveysBySurveyIdQuestions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /surveys/{survey_id}/questions/{question_id}/options
+  method: get
+  operationId: getSurveysBySurveyIdQuestionsByQuestionIdOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /surveys/{survey_id}/questions/{question_id}/responses
+  method: get
+  operationId: getSurveysBySurveyIdQuestionsByQuestionIdResponses
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/overview
+  method: get
+  operationId: getWorkflowOverview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/completed-periods
+  method: get
+  operationId: getWorkflowCompletedPeriods
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/workflows
+  method: get
+  operationId: getWorkflowWorkflows
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/workflows/{workflowId}
+  method: get
+  operationId: getWorkflowWorkflowsByWorkflowid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/raw-workflows
+  method: get
+  operationId: getWorkflowRawWorkflows
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/recommendations
+  method: get
+  operationId: getWorkflowRecommendations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/reporting-groups
+  method: get
+  operationId: getWorkflowReportingGroups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/ai/breakdown
+  method: get
+  operationId: getWorkflowAiBreakdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/ai/category-outcome-breakdown
+  method: get
+  operationId: getWorkflowAiCategoryOutcomeBreakdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/tools/overview
+  method: get
+  operationId: getWorkflowToolsOverview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/tools/search
+  method: get
+  operationId: getWorkflowToolsSearch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/tools/{toolId}
+  method: get
+  operationId: getWorkflowToolsByToolid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/tools/{toolId}/verdict
+  method: get
+  operationId: getWorkflowToolsByToolidVerdict
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/tools/{toolId}/category-outcome
+  method: get
+  operationId: getWorkflowToolsByToolidCategoryOutcome
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/tools/{toolId}/frictions
+  method: get
+  operationId: getWorkflowToolsByToolidFrictions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow/tools/{toolId}/workflows
+  method: get
+  operationId: getWorkflowToolsByToolidWorkflows
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
