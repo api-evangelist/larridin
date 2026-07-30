@@ -1,27 +1,192 @@
 aid: larridin
 name: Larridin
-description: Larridin is a company surfaced as a portfolio company of bloomberg-beta, homebrew and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: Larridin is an enterprise AI intelligence platform that measures whether an organization's
+  investment in AI is actually paying off across both its human and agent workforce. Its Scout product
+  instruments AI usage through a managed browser extension and desktop agent, then joins that telemetry
+  with source control, coding-assistant, incident, and work-tracking systems to report on AI adoption,
+  AI fluency (proficiency), AI governance and shadow-tool risk, token spend, workflow intelligence, and
+  Developer Intelligence — covering AI code share, velocity, quality, CI/CD delivery, reliability, agent
+  effectiveness, agent readiness, and developer sentiment. Larridin exposes this data through the
+  read-only Scout API v1 and a beta Model Context Protocol server for agents.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://larridin.com/assets/img/logo-header.webp
 url: https://raw.githubusercontent.com/api-evangelist/larridin/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - bloomberg-beta
 - homebrew
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-developer-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Artificial Intelligence
+- AI Adoption
+- AI Governance
+- Analytics
+- Developer Productivity
+- Developer Intelligence
+- Workflow Intelligence
+- Enterprise Software
+- Observability
+apis:
+- aid: larridin:larridin-adoption-api
+  name: Larridin Adoption API
+  description: Organization- and department-level AI adoption metrics.
+  humanURL: https://docs.larridin.com/api/scout-api-v1-reference
+  baseURL: https://scout-api.larridin.com/api/v1
+  tags:
+  - Adoption
+  properties:
+  - type: OpenAPI
+    url: openapi/larridin-adoption-api-openapi.yml
+  - type: Documentation
+    url: https://docs.larridin.com/
+  - type: APIReference
+    url: https://docs.larridin.com/api/scout-api-v1-reference
+- aid: larridin:larridin-proficiency-api
+  name: Larridin Proficiency API
+  description: >-
+    AI proficiency scoring, prompt categories, and conversation metrics. Period-based selection.
+  humanURL: https://docs.larridin.com/api/scout-api-v1-reference
+  baseURL: https://scout-api.larridin.com/api/v1
+  tags:
+  - Proficiency
+  properties:
+  - type: OpenAPI
+    url: openapi/larridin-proficiency-api-openapi.yml
+  - type: Documentation
+    url: https://docs.larridin.com/
+  - type: APIReference
+    url: https://docs.larridin.com/api/scout-api-v1-reference
+- aid: larridin:larridin-surveys-api
+  name: Larridin Surveys API
+  description: Survey campaigns, questions, options, and responses.
+  humanURL: https://docs.larridin.com/api/scout-api-v1-reference
+  baseURL: https://scout-api.larridin.com/api/v1
+  tags:
+  - Surveys
+  properties:
+  - type: OpenAPI
+    url: openapi/larridin-surveys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.larridin.com/
+  - type: APIReference
+    url: https://docs.larridin.com/api/scout-api-v1-reference
+- aid: larridin:larridin-tools-api
+  name: Larridin Tools API
+  description: Browser and desktop AI tool adoption, policy enforcement, and unapproved tool discovery.
+  humanURL: https://docs.larridin.com/api/scout-api-v1-reference
+  baseURL: https://scout-api.larridin.com/api/v1
+  tags:
+  - Tools
+  properties:
+  - type: OpenAPI
+    url: openapi/larridin-tools-api-openapi.yml
+  - type: Documentation
+    url: https://docs.larridin.com/
+  - type: APIReference
+    url: https://docs.larridin.com/api/scout-api-v1-reference
+- aid: larridin:larridin-workflow-intelligence-api
+  name: Larridin Workflow Intelligence API
+  description: Clustered workflow analysis, friction, recommendations, and tool verdicts.
+  humanURL: https://docs.larridin.com/api/scout-api-v1-reference
+  baseURL: https://scout-api.larridin.com/api/v1
+  tags:
+  - Workflow Intelligence
+  properties:
+  - type: OpenAPI
+    url: openapi/larridin-workflow-intelligence-api-openapi.yml
+  - type: Documentation
+    url: https://docs.larridin.com/
+  - type: APIReference
+    url: https://docs.larridin.com/api/scout-api-v1-reference
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: AgenticAccess
+  url: agentic-access/larridin-agentic-access.yml
+- type: TrustCenter
+  url: security/larridin-trust-center.yml
 - type: Website
   url: https://larridin.com/
+- type: DeveloperPortal
+  url: https://docs.larridin.com/
+- type: Documentation
+  url: https://docs.larridin.com/
+- type: APIReference
+  url: https://docs.larridin.com/api/scout-api-v1-reference
+- type: GettingStarted
+  url: https://docs.larridin.com/get-started
+- type: Quickstart
+  url: https://docs.larridin.com/get-started/quickstart
+- type: Support
+  url: https://larridin.com/contact
+- type: Blog
+  url: https://larridin.com/blog
+- type: BlogRSS
+  url: https://larridin.com/blog/rss.xml
+- type: GitHubOrganization
+  url: https://github.com/larridin
+- type: TermsOfService
+  url: https://larridin.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://larridin.com/privacy-policy
+- type: Login
+  url: https://app.larridin.com/
+- type: Integrations
+  url: https://docs.larridin.com/integrations
+- type: Compliance
+  url: https://trust.larridin.com/
+- type: Security
+  url: https://trust.larridin.com/
+- type: MCPServer
+  url: mcp/larridin-mcp.yml
+- type: LLMsTxt
+  url: llms/larridin-llms.txt
+- type: WellKnown
+  url: well-known/larridin-well-known.yml
+- type: Authentication
+  url: authentication/larridin-authentication.yml
+- type: OAuthScopes
+  url: scopes/larridin-scopes.yml
+- type: Conventions
+  url: conventions/larridin-conventions.yml
+- type: Conformance
+  url: conformance/larridin-conformance.yml
+- type: Lifecycle
+  url: lifecycle/larridin-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/larridin-problem-types.yml
+- type: DataModel
+  url: data-model/larridin-data-model.yml
+- type: DomainSecurity
+  url: security/larridin-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/larridin-vulnerability-disclosure.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  url: overlays/larridin-scout-overlay.yaml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
