@@ -1,0 +1,454 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Larridin Scout Adoption Tools API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-company-api-key",
+      "value": "{{x-company-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tools",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns browser platform AI adoption overview metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/browser/overview",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns browser platform AI adoption overview metrics."
+        },
+        {
+          "info": {
+            "name": "Returns time-series browser adoption data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/browser/trends",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns time-series browser adoption data."
+        },
+        {
+          "info": {
+            "name": "Returns detailed breakdown of browser AI usage by tools or departments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/browser/breakdown",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns detailed breakdown of browser AI usage by tools or departments."
+        },
+        {
+          "info": {
+            "name": "Same parameters as browser overview. Returns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/desktop/overview",
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Same parameters as browser overview. Returns"
+        },
+        {
+          "info": {
+            "name": "Same parameters as browser trends. Same response shape",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/desktop/trends",
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Same parameters as browser trends. Same response shape."
+        },
+        {
+          "info": {
+            "name": "Desktop breakdown is tools-only (no department grouping)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/desktop/breakdown",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Desktop breakdown is tools-only (no department grouping)."
+        },
+        {
+          "info": {
+            "name": "Returns metrics for a specific tool over time",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/:toolId",
+            "params": [
+              {
+                "name": "toolId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns metrics for a specific tool over time."
+        },
+        {
+          "info": {
+            "name": "Returns user-level AI tool usage data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/user-tool-usage",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "departmentName[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userEmail[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toolName[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toolDomain[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns user-level AI tool usage data."
+        },
+        {
+          "info": {
+            "name": "GET /tools/policy/enforcement-overview",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/policy/enforcement-overview",
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /tools/policy/enforcement-overview"
+        },
+        {
+          "info": {
+            "name": "GET /tools/policy/enforcement-breakdown",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/policy/enforcement-breakdown",
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /tools/policy/enforcement-breakdown"
+        },
+        {
+          "info": {
+            "name": "GET /tools/policy/breakdown",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/policy/breakdown",
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /tools/policy/breakdown"
+        },
+        {
+          "info": {
+            "name": "GET /tools/unapproved/overview",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/unapproved/overview",
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /tools/unapproved/overview"
+        },
+        {
+          "info": {
+            "name": "GET /tools/unapproved/breakdown",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/tools/unapproved/breakdown",
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /tools/unapproved/breakdown"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

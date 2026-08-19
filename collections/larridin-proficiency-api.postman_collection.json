@@ -1,0 +1,2173 @@
+{
+  "item": [
+    {
+      "id": "1ed4b3fb-7adf-4bfa-81cf-5f1f8c93b5fa",
+      "name": "Proficiency",
+      "description": {
+        "content": "AI proficiency scoring, prompt categories, and conversation metrics. Period-based selection.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f877b897-5c85-4447-a9df-1b28a8a25c34",
+          "name": "Returns AI proficiency score snapshot with prior-period comparison",
+          "request": {
+            "name": "Returns AI proficiency score snapshot with prior-period comparison",
+            "description": {
+              "content": "Returns AI proficiency score snapshot with prior-period comparison.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "proficiency",
+                "score"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "periodType",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "groupBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "granularity",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tool[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tool[]",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-company-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d222067c-db42-4686-a5f4-639e92e53f45",
+              "name": "Successful response using the standard Scout envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "score"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"data\": {},\n  \"query\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d63ad49e-14a2-4147-9f62-8b5efecc8d7d",
+              "name": "Bad Request — validation failure or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "score"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"details\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a71d574d-e39b-4edc-a9e5-d88caaab0b1a",
+              "name": "Unauthorized — missing or invalid authentication.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "score"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3ea8db7-9dc9-4a94-bdf9-5ae1d1710112",
+              "name": "Not Found — resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "score"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7bd5d564-b9d2-4c13-9d6c-f6a961b35ab0",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "score"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f819736-642b-48c2-9348-0f48d3d79146",
+          "name": "Returns time-series AI proficiency score data",
+          "request": {
+            "name": "Returns time-series AI proficiency score data",
+            "description": {
+              "content": "Returns time-series AI proficiency score data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "proficiency",
+                "trends"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "periodType",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "groupBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "granularity",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tool[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tool[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "percentiles[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "percentiles[]",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-company-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5361f995-e1f6-4f17-b57f-ee755a322ca2",
+              "name": "Successful response using the standard Scout envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "trends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"data\": {},\n  \"query\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "faf4bd51-82a4-40ea-87b4-74e835e4a164",
+              "name": "Bad Request — validation failure or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "trends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"details\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47542f47-f9b7-4807-be20-e7536a9fc2ea",
+              "name": "Unauthorized — missing or invalid authentication.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "trends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9cfba743-5df6-4008-a5dd-41fb25ffe9c4",
+              "name": "Not Found — resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "trends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "82e73c5f-6d4d-4365-ae6b-e652dda2ff0a",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "trends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "percentiles[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19cc774d-4e69-4e33-b835-fce13bac41af",
+          "name": "Returns AI topic/prompt classification breakdown",
+          "request": {
+            "name": "Returns AI topic/prompt classification breakdown",
+            "description": {
+              "content": "Returns AI topic/prompt classification breakdown.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "proficiency",
+                "prompt-categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "periodType",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "groupBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "granularity",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tool[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tool[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "topics[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "topics[]",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-company-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "39961fdc-a5c7-433a-8c23-7df796701bd6",
+              "name": "Successful response using the standard Scout envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "prompt-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"data\": {},\n  \"query\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c480909-4e9c-4660-9bdf-5f2de8c52dc6",
+              "name": "Bad Request — validation failure or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "prompt-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"details\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "504ea448-1e62-4eb5-acff-a53f3a417f64",
+              "name": "Unauthorized — missing or invalid authentication.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "prompt-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c182e023-bbaa-4548-90d0-81ee908f7177",
+              "name": "Not Found — resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "prompt-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bdff9e1-f7c6-43bd-8768-70c4b939537a",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "prompt-categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "topics[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80b8fed4-d7fc-400a-b3c0-4d24b74b7a50",
+          "name": "Returns time-series conversation-level interaction metrics",
+          "request": {
+            "name": "Returns time-series conversation-level interaction metrics",
+            "description": {
+              "content": "Returns time-series conversation-level interaction metrics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "proficiency",
+                "conversation-metrics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "periodType",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "period",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "groupBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "granularity",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "department[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tool[]",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tool[]",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-company-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a1a234b9-469b-46a0-ae53-a38a89486650",
+              "name": "Successful response using the standard Scout envelope.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "conversation-metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"data\": {},\n  \"query\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a54088d8-010e-45a0-a921-9bf69906828c",
+              "name": "Bad Request — validation failure or invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "conversation-metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\",\n  \"details\": [\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"field\": \"string\",\n      \"message\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4251fe2f-3b72-431f-9bba-0dae7fa1b750",
+              "name": "Unauthorized — missing or invalid authentication.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "conversation-metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1974a356-2cb8-4ced-8ddb-11169bc9c019",
+              "name": "Not Found — resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "conversation-metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4bd0aeb1-355e-432c-a17b-db8bfab4f99f",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "proficiency",
+                    "conversation-metrics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "periodType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "period",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "granularity",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "department[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tool[]",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-company-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://scout-api.larridin.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-company-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "aad1ee91-3edb-4740-a6be-27fe1ef81184",
+    "name": "Larridin Scout Adoption Proficiency API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Larridin Scout API exposes the metrics behind Larridin Scout: AI adoption, AI proficiency (fluency), AI tool inventory and policy enforcement, employee surveys, and workflow intelligence. All documented endpoints are read-only (GET) and return the standard Scout envelope `{ \"success\": true, \"data\": {...}, \"query\": {...} }`.\n\nGenerated by the API Evangelist enrichment pipeline as a faithful transcription of the provider's public reference at https://docs.larridin.com/api/scout-api-v1-reference. It is not a provider-published specification.\n\nContact Support:\n Name: Larridin",
+      "type": "text/plain"
+    }
+  }
+}

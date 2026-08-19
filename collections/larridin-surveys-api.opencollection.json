@@ -1,0 +1,266 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Larridin Scout Adoption Surveys API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-company-api-key",
+      "value": "{{x-company-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Surveys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns paginated list of survey campaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/surveys",
+            "params": [
+              {
+                "name": "types",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "desc",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "campaign[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns paginated list of survey campaigns."
+        },
+        {
+          "info": {
+            "name": "GET /surveys/:survey_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/surveys/:survey_id",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /surveys/:survey_id"
+        },
+        {
+          "info": {
+            "name": "GET /surveys/:survey_id/questions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/surveys/:survey_id/questions",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /surveys/:survey_id/questions"
+        },
+        {
+          "info": {
+            "name": "GET /surveys/:survey_id/questions/:question_id/options",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/surveys/:survey_id/questions/:question_id/options",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "question_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "graphType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "option[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /surveys/:survey_id/questions/:question_id/options"
+        },
+        {
+          "info": {
+            "name": "GET /surveys/:survey_id/questions/:question_id/responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/surveys/:survey_id/questions/:question_id/responses",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "question_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "role[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "GET /surveys/:survey_id/questions/:question_id/responses"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

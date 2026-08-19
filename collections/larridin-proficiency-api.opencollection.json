@@ -1,0 +1,252 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Larridin Scout Adoption Proficiency API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-company-api-key",
+      "value": "{{x-company-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Proficiency",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns AI proficiency score snapshot with prior-period comparison",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/proficiency/score",
+            "params": [
+              {
+                "name": "periodType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns AI proficiency score snapshot with prior-period comparison."
+        },
+        {
+          "info": {
+            "name": "Returns time-series AI proficiency score data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/proficiency/trends",
+            "params": [
+              {
+                "name": "periodType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "percentiles[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns time-series AI proficiency score data."
+        },
+        {
+          "info": {
+            "name": "Returns AI topic/prompt classification breakdown",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/proficiency/prompt-categories",
+            "params": [
+              {
+                "name": "periodType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "topics[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns AI topic/prompt classification breakdown."
+        },
+        {
+          "info": {
+            "name": "Returns time-series conversation-level interaction metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/proficiency/conversation-metrics",
+            "params": [
+              {
+                "name": "periodType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "period",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns time-series conversation-level interaction metrics."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

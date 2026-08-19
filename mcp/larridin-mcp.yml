@@ -3,11 +3,10 @@ method: searched
 status: published
 source: https://docs.larridin.com/api/mcp
 maturity: beta
-description: >-
-  Larridin publishes an official Model Context Protocol server that connects AI assistants and agents to
-  Scout. It is enabled per organization: additional tools may be enabled for an organization and access
-  follows that organization's enabled policy, so the endpoint URL is supplied by the Larridin team.
-  Only the whoami tool is documented for public use.
+description: 'Larridin publishes an official Model Context Protocol server that connects AI assistants
+  and agents to Scout. It is enabled per organization: additional tools may be enabled for an organization
+  and access follows that organization''s enabled policy, so the endpoint URL is supplied by the Larridin
+  team. Only the whoami tool is documented for public use.'
 server:
   name: larridin
   transport: http
@@ -15,15 +14,13 @@ server:
   path: /mcp/larridin
   url: https://app.larridin.com/mcp/larridin
   url_source: well-known/larridin-oauth-protected-resource.json
-  note: >-
-    The docs describe the endpoint as /mcp/larridin on the public Scout/Larridin application URL supplied
+  note: The docs describe the endpoint as /mcp/larridin on the public Scout/Larridin application URL supplied
     by your Larridin team. The absolute URL above is the resource identifier published in the RFC 9728
     protected-resource metadata at https://app.larridin.com/.well-known/oauth-protected-resource.
 authentication:
   type: oauth2
-  description: >-
-    OAuth 2.0. Compatible clients discover the authorization and protected-resource metadata and prompt
-    the user to sign in.
+  description: OAuth 2.0. Compatible clients discover the authorization and protected-resource metadata
+    and prompt the user to sign in.
   authorization_server: https://login.larridin.com
   bearer_methods_supported:
   - header
@@ -34,9 +31,15 @@ tools:
   description: Returns your authenticated Larridin user and organization context.
   documented: true
 undocumented_tools:
-  note: >-
-    Larridin states that additional tools may be enabled per organization but does not publish their
+  note: Larridin states that additional tools may be enabled per organization but does not publish their
     names. Only whoami is documented for public use; nothing further is asserted here.
 see_also:
 - title: Scout API v1 Reference — the REST API
   url: https://docs.larridin.com/api/scout-api-v1-reference
+deployment:
+  mode: remote
+  endpoint: https://app.larridin.com/mcp/larridin
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census

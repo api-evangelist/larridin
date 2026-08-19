@@ -1,0 +1,673 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Larridin Scout Adoption Workflow Intelligence API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-company-api-key",
+      "value": "{{x-company-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflow Intelligence",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns organization-level (or reporting-group–scoped) workflow friction and AI-clustering summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/overview",
+            "params": [
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reportingGroupId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns organization-level (or reporting-group–scoped) workflow friction and AI-clustering summary."
+        },
+        {
+          "info": {
+            "name": "Returns the most recent four-week periods that have completed workflow data. Use these as valid",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/completed-periods",
+            "params": [
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "numPeriods",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns the most recent four-week periods that have completed workflow data. Use these as valid"
+        },
+        {
+          "info": {
+            "name": "Returns a paginated breakdown of clustered workflows for a four-week period, sorted and filterable",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/workflows",
+            "params": [
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reportingGroupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toolIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns a paginated breakdown of clustered workflows for a four-week period, sorted and filterable."
+        },
+        {
+          "info": {
+            "name": "Returns detailed metrics, recommendations, and the step sequence for a single workflow. Returns 404 if the...",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/workflows/:workflowId",
+            "params": [
+              {
+                "name": "workflowId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns detailed metrics, recommendations, and the step sequence for a single workflow. Returns 404 if the workflow does not exist in the given period."
+        },
+        {
+          "info": {
+            "name": "Returns raw (per-user, per-day) workflows for a list of users over a date range, sorted by",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/raw-workflows",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userEmails",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns raw (per-user, per-day) workflows for a list of users over a date range, sorted by"
+        },
+        {
+          "info": {
+            "name": "Returns a paginated list of workflow improvement recommendations, ordered by priority",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/recommendations",
+            "params": [
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reportingGroupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns a paginated list of workflow improvement recommendations, ordered by priority."
+        },
+        {
+          "info": {
+            "name": "Returns a paginated, sortable breakdown of workflow friction metrics per reporting group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/reporting-groups",
+            "params": [
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns a paginated, sortable breakdown of workflow friction metrics per reporting group."
+        },
+        {
+          "info": {
+            "name": "Returns AI vs. non-AI clustered-workflow counts and AI-impact verdict tallies (helps / hurts / neutral)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/ai/breakdown",
+            "params": [
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reportingGroupId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns AI vs. non-AI clustered-workflow counts and AI-impact verdict tallies (helps / hurts / neutral)."
+        },
+        {
+          "info": {
+            "name": "Returns workflow outcome distribution by category, split into AI-assisted vs. non-AI cohorts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/ai/category-outcome-breakdown",
+            "params": [
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reportingGroupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns workflow outcome distribution by category, split into AI-assisted vs. non-AI cohorts."
+        },
+        {
+          "info": {
+            "name": "Returns a summary of tool usage and friction across all tools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/tools/overview",
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns a summary of tool usage and friction across all tools."
+        },
+        {
+          "info": {
+            "name": "Returns a paginated, sortable, searchable list of tools",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/tools/search",
+            "params": [
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reportingGroupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns a paginated, sortable, searchable list of tools."
+        },
+        {
+          "info": {
+            "name": "Returns detailed metrics for a single tool",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/tools/:toolId",
+            "params": [
+              {
+                "name": "toolId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns detailed metrics for a single tool."
+        },
+        {
+          "info": {
+            "name": "Returns the AI-impact verdict and recommendation for a tool",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/tools/:toolId/verdict",
+            "params": [
+              {
+                "name": "toolId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns the AI-impact verdict and recommendation for a tool."
+        },
+        {
+          "info": {
+            "name": "Returns workflow outcome distribution for workflows that use the tool vs. those that do not",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/tools/:toolId/category-outcome",
+            "params": [
+              {
+                "name": "toolId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns workflow outcome distribution for workflows that use the tool vs. those that do not."
+        },
+        {
+          "info": {
+            "name": "Returns friction-type tallies for workflows that use the tool vs. those that do not",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/tools/:toolId/frictions",
+            "params": [
+              {
+                "name": "toolId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns friction-type tallies for workflows that use the tool vs. those that do not."
+        },
+        {
+          "info": {
+            "name": "Returns a paginated, sortable list of workflows comparing usage with vs. without the tool",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/workflow/tools/:toolId/workflows",
+            "params": [
+              {
+                "name": "toolId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "periodStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "periodEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reportingGroupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns a paginated, sortable list of workflows comparing usage with vs. without the tool."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

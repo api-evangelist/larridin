@@ -1,0 +1,228 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Larridin Scout Adoption API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-company-api-key",
+      "value": "{{x-company-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Adoption",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns organization-level or department-level AI adoption overview metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/adoption/overview",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "aiTypes[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns organization-level or department-level AI adoption overview metrics."
+        },
+        {
+          "info": {
+            "name": "Returns time-series adoption metrics with optional grouping",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/adoption/trends",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "metrics",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "platform[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "aiTypes[]",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns time-series adoption metrics with optional grouping."
+        },
+        {
+          "info": {
+            "name": "Returns detailed breakdown of AI adoption by tools or departments, with pagination",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scout-api.larridin.com/api/v1/adoption/breakdown",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "granularity",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "department[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tool[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "platform[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "aiTypes[]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-company-api-key",
+              "value": "{{x-company-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Returns detailed breakdown of AI adoption by tools or departments, with pagination."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
