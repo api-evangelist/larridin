@@ -8,6 +8,18 @@ description: Larridin is an enterprise AI intelligence platform that measures wh
   Developer Intelligence — covering AI code share, velocity, quality, CI/CD delivery, reliability, agent
   effectiveness, agent readiness, and developer sentiment. Larridin exposes this data through the
   read-only Scout API v1 and a beta Model Context Protocol server for agents.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
