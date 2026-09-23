@@ -1,11 +1,7 @@
 {
   "provider": "larridin",
   "sources": [
-    "larridin-adoption-api-openapi.yml",
-    "larridin-proficiency-api-openapi.yml",
-    "larridin-surveys-api-openapi.yml",
-    "larridin-tools-api-openapi.yml",
-    "larridin-workflow-intelligence-api-openapi.yml"
+    "_original/larridin-scout-openapi.yml"
   ],
   "outputs": [
     "larridin-adoption-api-openapi.yml",
@@ -17,6 +13,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "larridin-scout-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "larridin-adoption-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "larridin-proficiency-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "larridin-surveys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "larridin-tools-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "larridin-workflow-intelligence-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

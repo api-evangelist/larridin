@@ -1,10 +1,9 @@
-generated: '2026-07-19'
+generated: '2026-09-19'
 method: searched
 source: live probe of /.well-known/ on every Larridin host in apis.yml + OpenAPI servers[]
-notes: >-
-  Only https://app.larridin.com/ serves real .well-known documents, and only the two OAuth metadata
-  documents that back the beta MCP server. The remaining paths on that host return HTTP 200 with the
-  application's SPA HTML shell rather than a discovery document, so they are recorded as not present.
+notes: Only https://app.larridin.com/ serves real .well-known documents, and only the two OAuth metadata
+  documents that back the beta MCP server. The remaining paths on that host return HTTP 200 with the application's
+  SPA HTML shell rather than a discovery document, so they are recorded as not present.
 hosts:
 - host: https://app.larridin.com
   documents:
@@ -78,3 +77,23 @@ hosts:
     status: 404
   - path: /.well-known/ai-plugin.json
     status: 404
+- host: https://login.larridin.com
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: larridin-login-oauth-authorization-server.json
+    bytes: 883
+  path_echo_control: passed
+x-mcp-probe:
+  probed: '2026-09-19'
+  issue: roadmap#321, roadmap#337
+  documents:
+  - host: https://login.larridin.com
+    path: /.well-known/oauth-authorization-server
+    file: larridin-login-oauth-authorization-server.json
+  validated_on: resource (RFC 9728) / issuer (RFC 8414, OIDC)
+  negative_control: one per host; a 2xx JSON object at an impossible path discards the host
+note: 'MCP-host OAuth discovery added 2026-09-19 (roadmap#321/#337): the harvest visits a provider''s
+  primary hosts, and RFC 9728 protected-resource metadata lives on the MCP host, so these documents existed
+  and were invisible to the scorer. Fetched live and validated on `resource`/`issuer`; one negative control
+  per host.'

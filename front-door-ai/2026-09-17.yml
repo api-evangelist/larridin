@@ -1,0 +1,33 @@
+# Front Door AI Index — larridin — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: larridin
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: larridin.com
+  final_host: larridin.com
+  ownership: own
+  owner: larridin
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 118
+  host_score: 118
+  density: 66.11
+  words: 1785
+  tiers:
+    agentic: 4
+    core: 113
+    model: 1
+  ambiguous: 59
+  top_terms:
+    AI: 112
+    intelligence: 32
+    agent: 25
+    automation: 2
+    inference: 2
+    AI agent: 1
+    Claude: 1
+    LLMs: 1
+    MCP: 1
