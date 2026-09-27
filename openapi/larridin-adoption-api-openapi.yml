@@ -260,6 +260,31 @@ paths:
         schema:
           type: number
 components:
+  responses:
+    ValidationError:
+      description: Bad Request — validation failure or invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
+    Unauthorized:
+      description: Unauthorized — missing or invalid authentication.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    ServerError:
+      description: Internal Server Error.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not Found — resource does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     ValidationError:
       type: object
@@ -303,31 +328,6 @@ components:
       required:
       - success
       - error
-  responses:
-    ServerError:
-      description: Internal Server Error.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    ValidationError:
-      description: Bad Request — validation failure or invalid parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ValidationError'
-    NotFound:
-      description: Not Found — resource does not exist.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized — missing or invalid authentication.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     companyApiKey:
       type: apiKey
