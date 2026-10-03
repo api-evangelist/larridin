@@ -261,18 +261,18 @@ paths:
           type: number
 components:
   responses:
-    ValidationError:
-      description: Bad Request — validation failure or invalid parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ValidationError'
     Unauthorized:
       description: Unauthorized — missing or invalid authentication.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    ValidationError:
+      description: Bad Request — validation failure or invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationError'
     ServerError:
       description: Internal Server Error.
       content:
@@ -286,21 +286,18 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
-    ValidationError:
+    Error:
       type: object
       properties:
+        success:
+          type: boolean
+          const: false
         error:
           type: string
-          const: Validation failed
-        details:
-          type: array
-          items:
-            type: object
-            properties:
-              field:
-                type: string
-              message:
-                type: string
+          description: Human-readable error message.
+      required:
+      - success
+      - error
     SuccessEnvelope:
       type: object
       description: Standard Scout success envelope. The `data` shape varies by endpoint.
@@ -316,18 +313,21 @@ components:
       required:
       - success
       - data
-    Error:
+    ValidationError:
       type: object
       properties:
-        success:
-          type: boolean
-          const: false
         error:
           type: string
-          description: Human-readable error message.
-      required:
-      - success
-      - error
+          const: Validation failed
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+              message:
+                type: string
   securitySchemes:
     companyApiKey:
       type: apiKey
