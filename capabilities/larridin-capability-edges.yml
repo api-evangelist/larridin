@@ -1,0 +1,25 @@
+slug: larridin
+provider: Larridin
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Workflow Intelligence
+  spec_file: larridin-workflow-intelligence-api-openapi.yml
+  capability_id: BC-930.40
+  capability_id_l1: BC-930
+  capability_name: Process Mining and Discovery
+  confidence: 0.7
+  evidence: GET /workflow/workflows  Returns a paginated breakdown of clustered workflows for a four-week
+    period; GET /workflow/recommendations  Returns a paginated list of workflow improvement recommendations
+  reason: Clustering observed per-user telemetry into workflows with step sequences, friction metrics
+    and improvement recommendations is event-log-driven process discovery and process intelligence.
