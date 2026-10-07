@@ -136,6 +136,10 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Pricing
+  url: https://larridin.com/router/
+- type: Plans
+  url: plans/larridin-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/larridin-capability-edges.yml
   name: Larridin Business Capability Map
