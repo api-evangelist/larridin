@@ -1,0 +1,25 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://larridin.com/router/
+sources:
+- https://larridin.com/router/
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T112025
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: false
+note: No numeric price is published on the pricing page; Product page for Larridin Router with no pricing;
+  CTAs are 'Get Pricing' and 'Try Now'. Dollar figures shown (e.g. $18,420 saved, $5,000 in Router credits
+  for conference attendees) are illustrative savings/promotional credits, not prices.
+plan_count: 1
+plans:
+- name: Larridin Router
+  price_text: Get Pricing
+  period: none
