@@ -64,46 +64,143 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Larridin is an enterprise AI intelligence platform that measures whether an organization's investment in AI is actually paying off across both its human and agent workforce. Its Scout product instruments AI usage through a managed browser extension and desktop agent, then joins that telemetry with source control, coding-assistant, incident, and work-tracking systems to report on AI adoption, AI fluency, AI governance and shadow-tool risk, token spend, workflow intelligence, and Developer Intelligence.
+Larridin is an enterprise AI intelligence platform that measures whether an organization's investment in AI is actually paying off across both its human and agent workforce. Its Scout product instruments AI usage through a managed browser extension and desktop agent, then joins that telemetry with source control, coding-assistant, incident, and work-tracking systems to report on AI adoption, AI fluency (proficiency), AI governance and shadow-tool risk, token spend, workflow intelligence, and Developer Intelligence — covering AI code share, velocity, quality, CI/CD delivery, reliability, agent effectiveness, agent readiness, and developer sentiment. Larridin exposes this data through the read-only Scout API v1 and a beta Model Context Protocol server for agents.
 
-- Website — https://larridin.com/
-- Developer docs — https://docs.larridin.com/
-- Scout API v1 reference — https://docs.larridin.com/api/scout-api-v1-reference
-- MCP server (beta) — https://docs.larridin.com/api/mcp
-- Trust Center — https://trust.larridin.com/
+**Areas:** Company · Artificial Intelligence · AI Adoption · AI Governance · Analytics · Developer Productivity · Developer Intelligence · Workflow Intelligence · Enterprise Software · Observability
 
-Backed by: bloomberg-beta, homebrew
+## Larridin on APIs.io
 
-## APIs
+Everything profiled for Larridin is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/larridin/](https://apis.io/providers/larridin/)** — or go straight to one of the APIs or properties below.
 
-| API | Base URL | Spec |
-|---|---|---|
-| Larridin Scout API v1 | `https://scout-api.larridin.com/api/v1` | [`openapi/larridin-scout-openapi.yml`](openapi/larridin-scout-openapi.yml) |
+### APIs (5)
 
-The Scout API v1 is read-only: all 41 documented operations are `GET`. Authentication is a company API key in the `x-company-api-key` header, which must carry the `ANALYTICS` scope. The beta MCP server is separately authenticated with OAuth 2.0.
+- [Larridin Adoption API](https://apis.io/apis/larridin/larridin-adoption-api/) — Organization- and department-level AI adoption metrics.
+- [Larridin Proficiency API](https://apis.io/apis/larridin/larridin-proficiency-api/) — AI proficiency scoring, prompt categories, and conversation metrics. Period-based selection.
+- [Larridin Surveys API](https://apis.io/apis/larridin/larridin-surveys-api/) — Survey campaigns, questions, options, and responses.
+- [Larridin Tools API](https://apis.io/apis/larridin/larridin-tools-api/) — Browser and desktop AI tool adoption, policy enforcement, and unapproved tool discovery.
+- [Larridin Workflow Intelligence API](https://apis.io/apis/larridin/larridin-workflow-intelligence-api/) — Clustered workflow analysis, friction, recommendations, and tool verdicts.
 
-## Artifacts
+### Published properties
 
-| Artifact | Path | Method |
-|---|---|---|
-| OpenAPI 3.1 | `openapi/larridin-scout-openapi.yml` | generated from the public reference |
-| MCP server | `mcp/larridin-mcp.yml` | searched |
-| llms.txt | `llms/larridin-llms.txt` | searched (verbatim) |
-| Well-known | `well-known/` | searched |
-| Authentication | `authentication/larridin-authentication.yml` | searched |
-| OAuth scopes | `scopes/larridin-scopes.yml` | searched |
-| Conventions | `conventions/larridin-conventions.yml` | searched |
-| Error catalog | `errors/larridin-problem-types.yml` | searched |
-| Lifecycle | `lifecycle/larridin-lifecycle.yml` | searched |
-| Conformance | `conformance/larridin-conformance.yml` | searched |
-| Trust center | `security/larridin-trust-center.yml` | searched |
-| Vulnerability disclosure | `security/larridin-vulnerability-disclosure.yml` | searched |
-| Domain security | `security/larridin-domain-security.yml` | probed |
-| Data model | `data-model/larridin-data-model.yml` | derived |
-| Agentic access | `agentic-access/larridin-agentic-access.yml` | generated |
-| Overlay | `overlays/larridin-scout-overlay.yaml` | generated |
-| Agent Skills | `skills/` | generated |
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Notes
+#### MCP servers (1)
 
-Larridin publishes a human-readable API reference but no machine-readable OpenAPI description — the spec here is a faithful transcription by the API Evangelist enrichment pipeline, not a provider-published artifact. No SDKs, CLI, sandbox, changelog, status page, deprecation policy, pricing page, or event/webhook surface were found on the public developer surface as of 2026-07-19.
+Model Context Protocol servers that expose the API to agents.
+
+- [larridin](https://apis.io/servers/larridin/larridin/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Larridin Agentic Access](https://apis.io/agentic-access/larridin/larridin-agentic-access/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Larridin Scout Adoption API](https://apis.io/collections/larridin/open-larridin-adoption-api/)
+- [Larridin Scout Adoption Proficiency API](https://apis.io/collections/larridin/open-larridin-proficiency-api/)
+- [Larridin Scout Adoption Surveys API](https://apis.io/collections/larridin/open-larridin-surveys-api/)
+- [Larridin Scout Adoption Tools API](https://apis.io/collections/larridin/open-larridin-tools-api/)
+- [Larridin Scout Adoption Workflow Intelligence API](https://apis.io/collections/larridin/open-larridin-workflow-intelligence-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Larridin Scout Overlay](https://apis.io/overlays/larridin/larridin-scout-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Larridin Authentication](https://apis.io/security/larridin/larridin-authentication/)
+- [Larridin Domain Security](https://apis.io/security/larridin/larridin-domain-security/)
+- [Larridin Trust Center](https://apis.io/security/larridin/larridin-trust-center/)
+- [Larridin Vulnerability Disclosure](https://apis.io/security/larridin/larridin-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Larridin Scopes](https://apis.io/scopes/larridin/larridin-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Larridin Plans Pricing](https://apis.io/plans/larridin/larridin-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://larridin.com/)
+- [Documentation](https://docs.larridin.com/)
+- [Getting started](https://docs.larridin.com/get-started)
+- [API reference](https://docs.larridin.com/api/scout-api-v1-reference)
+- [Pricing](https://larridin.com/router/)
+- [Support](https://larridin.com/contact)
+- [Blog](https://larridin.com/blog)
+- [Security](https://trust.larridin.com/)
+- [Compliance](https://trust.larridin.com/)
+- [Terms of service](https://larridin.com/terms-of-use)
+- [Privacy policy](https://larridin.com/privacy-policy)
+- [GitHub](https://github.com/larridin)
+
+## API Evangelist rating
+
+**Kin Score 54.7** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 50.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 58.9 |
+| Access clarity | 75.0 |
+
+**Agent readiness 54.3** — agent-native
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | na |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 41.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/larridin/](https://apis.io/providers/larridin/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Larridin: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/larridin/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
